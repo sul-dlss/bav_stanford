@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="mirador/css/mirador-combined.css">
+    <title>Mirador Viewer</title>
+    <style type="text/css">
+     #viewer {
+       width: 100%;
+       height: 100%;
+       position: fixed;
+     }
+    </style>
+  </head>
+  <body>
+    <div id="viewer"></div>
+
+    <script src="mirador/js/src/mirador.js"></script>
+    <script type="text/javascript">
+
+     $(function() {
+       myMiradorInstance = Mirador({
+         id: "viewer",
+         layout: "1x1",
+         buildPath: "mirador",
+         data: [
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.1/manifest.json', location: 'Urb.lat.1'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.2/manifest.json', location: 'Urb.lat.2'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.gr.2/manifest.json', location: 'Urb.gr.2'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.10/manifest.json', location: 'Urb.lat.10'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.9/manifest.json', location: 'Urb.lat.9'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.74/manifest.json', location: 'Urb.lat.74'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.52/manifest.json', location: 'Urb.lat.52'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.185/manifest.json', location: 'Urb.lat.185'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.1324/manifest.json', location: 'Urb.lat.1324'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.187/manifest.json', location: 'Urb.lat.187'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.136/manifest.json', location: 'Urb.lat.136'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.151/manifest.json', location: 'Urb.lat.151'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.250/manifest.json', location: 'Urb.lat.250'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.248/manifest.json', location: 'Urb.lat.248'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.1221/manifest.json', location: 'Urb.lat.1221'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.281/manifest.json', location: 'Urb.lat.281'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.264/manifest.json', location: 'Urb.lat.264'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.410/manifest.json', location: 'Urb.lat.410'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.419/manifest.json', location: 'Urb.lat.419-420'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.420/manifest.json', location: 'Urb.lat.420'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.427/manifest.json', location: 'Urb.lat.427'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.491/manifest.json', location: 'Urb.lat.491'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.326/manifest.json', location: 'Urb.lat.326'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.899/manifest.json', location: 'Urb.lat.899'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.gr.136/manifest.json', location: 'Urb.gr.136'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.349/manifest.json', location: 'Urb.lat.349'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.350/manifest.json', location: 'Urb.lat.350*'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.651/manifest.json', location: 'Urb.lat.651'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.365/manifest.json', location: 'Urb.lat.365'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.681/manifest.json', location: 'Urb.lat.681'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.337/manifest.json', location: 'Urb.lat.337'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.328/manifest.json', location: 'Urb.lat.328'},
+{ manifestUri: 'http://digi.vatlib.it/iiif/MSS_Urb.lat.324/manifest.json', location: 'Urb.lat.324'}         
+],
+"windowObjects": [],
+	  /** Testing Annotations **/
+	  annotationEndpoint: {
+			name: 'Simple Annotation Store Endpoint',
+			module: 'SimpleASEndpoint',
+			options: {
+				url: 'annotation',
+			  storeId: 'comparison',
+			  APIKey: 'user_auth'
+			}
+	  },
+      'annotationBodyEditor': {
+        'module': 'TinyMCEAnnotationBodyEditor',
+        'options': {
+          config: {
+            plugins: "image link media directionality",
+            toolbar: "bold italic | bullist numlist | link image media | removeformat | ltr rtl",
+            tags: ["test", "test2", "test3"]
+          }
+	  }
+    },
+	"windowSettings": {
+	           "canvasControls": { // The types of controls available to be displayed on a canvas
+	             "imageManipulation" : {
+	               "manipulationLayer" : true,
+	               "controls" : {
+	                 "mirror" : true
+	               }
+	             }
+	           }
+	         },
+     "sidePanelOptions" : {
+       "tocTabAvailable": true,
+       "layersTabAvailable": true,
+       "searchTabAvailable": true
+     }
+  });
+});
+</script>
+  </body>
+</html>
