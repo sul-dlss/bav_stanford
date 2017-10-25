@@ -1,0 +1,13 @@
+{
+  "name": "bav_stanford",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "setup": "unzip node_modules/mirador/build.zip && cp -r build/mirador ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mirador": "^2.5.1"
+  }
+}
