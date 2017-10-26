@@ -17,13 +17,14 @@
     <div id="viewer"></div>
 
     <script src="mirador/mirador.js"></script>
+    <script src="mirador/simpleASEndpoint.js"></script>
     <script type="text/javascript">
 
      $(function() {
        myMiradorInstance = Mirador({
          id: "viewer",
          layout: "1x1",
-         buildPath: "mirador",
+         buildPath: "mirador/",
          data: [
          { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Barb.gr.221/manifest.json', location: 'Barb.gr.221'},
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Barb.gr.252/manifest.json', location: 'Barb.gr.252'},
@@ -145,7 +146,7 @@
 			name: 'Simple Annotation Store Endpoint',
 			module: 'SimpleASEndpoint',
 			options: {
-				url: 'annotation',
+				url: 'http://sas-demo.us-east-1.elasticbeanstalk.com/annotation',
 			  storeId: 'comparison',
 			  APIKey: 'user_auth'
 			}
