@@ -2,12 +2,13 @@
   "name": "bav_stanford",
   "version": "1.0.0",
   "description": "",
+  "repository": "git@github.com:sul-dlss/bav_stanford.git",
   "scripts": {
-    "setup": "unzip node_modules/mirador/build.zip && cp -r build/mirador ./"
+    "setup": "rm -rf mirador && mkdir -p mirador && cp -r node_modules/mirador/dist/* mirador"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mirador": "^2.5.1"
+    "mirador": "~2.6.0"
   }
 }
