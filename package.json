@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "wget https://github.com/ProjectMirador/mirador/releases/download/v2.6.0/build.zip",
-    "copy": "unzip build.zip && cp -r build/mirador ./",
-    "clean": "rm build.zip && rm -r build",
-    "setup": "npm run build && npm run copy && npm run clean",
-    "endpoint": "wget -O mirador/simpleASEndpoint.js https://raw.githubusercontent.com/ProjectMirador/mirador/develop/js/src/annotations/simpleASEndpoint.js"
+    "copy": "rm -rf mirador && mkdir -p mirador && cp -r node_modules/mirador/dist/* mirador",
+    "endpoint": "wget -O mirador/simpleASEndpoint.js https://raw.githubusercontent.com/ProjectMirador/mirador/develop/js/src/annotations/simpleASEndpoint.js",
+    "setup": "npm run copy && npm run endpoint",
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "mirador": "~2.6.0"
+  }
 }
