@@ -69,6 +69,7 @@
         type: 'DELETE',
         dataType: 'json',
         headers: {
+          'Authorization': 'test123'
           // 'X-CSRF-Token': _this.csrfToken()
         },
         contentType: "application/json; charset=utf-8",
@@ -91,12 +92,12 @@
       var annotation = _this.getAnnotationInEndpoint(oaAnnotation);
       
       var annotationID = annotation.annotation['uuid'];
-
       jQuery.ajax({
         url: _this.endpoint + '/' + encodeURIComponent(annotationID),
         type: 'PATCH',
         dataType: 'json',
         headers: {
+          'Authorization': 'test123',
           'X-CSRF-Token': _this.csrfToken()
         },
         data: JSON.stringify(annotation),
@@ -124,6 +125,7 @@
         url: _this.endpoint,
         type: 'POST',
         headers: {
+          'Authorization': 'test123'
           // 'X-CSRF-Token': _this.csrfToken()
         },
         data: JSON.stringify(annotation),
