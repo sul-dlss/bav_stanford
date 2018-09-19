@@ -17,7 +17,7 @@
     <div id="viewer"></div>
 
     <script src="mirador/mirador.js"></script>
-    <script src="annotot_endpoint.js"></script>
+    <script src="annotot_endpoint.js?version=1"></script>
     <script type="text/javascript">
 
      $(function() {
@@ -82,7 +82,7 @@
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Borgh.112/manifest.json', location: 'Borgh.112'},
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Chig.L.VIII.296/manifest.json', location: 'Chigi.L.VIII.296'},
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Ott.lat.1210/manifest.json', location: 'Ott.lat.1210'},
-{ manifestUri: 'https://digi.vatlib.it/iiif/MSS_Ott.lat.296/manifest.json', location: 'Ott.lat.296'},		 
+{ manifestUri: 'https://digi.vatlib.it/iiif/MSS_Ott.lat.296/manifest.json', location: 'Ott.lat.296'},
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Pal.lat.177/manifest.json', location: 'Pal.lat.177'},
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Pal.lat.202/manifest.json', location: 'Pal.lat.202'},
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Pal.lat.235/manifest.json', location: 'Pal.lat.235'},
@@ -140,14 +140,14 @@
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Vat.lat.10969/manifest.json', location: 'Vat.lat.10969'},
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Vat.lat.11559/manifest.json', location: 'Vat.lat.11559'},
 { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Vat.lat.12910/manifest.json', location: 'Vat.lat.12910'},
-{ manifestUri: 'https://digi.vatlib.it/iiif/Vat.lat.10696/manifest.json', location: 'Vat.lat.10696'}
+{ manifestUri: 'https://digi.vatlib.it/iiif/MSS_Vat.lat.10696/manifest.json', location: 'Vat.lat.10696'}
 ],
 "windowObjects": [],
     annotationEndpoint: {
       name: 'Annotot',
       module: 'AnnototEndpoint',
       options: {
-        endpoint: 'http://127.0.0.1:3000/annotations'
+        endpoint: 'http://example.com/annotations'
       }
     },
       'annotationBodyEditor': {
