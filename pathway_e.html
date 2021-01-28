@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="mirador/css/mirador-combined.css">
+    <title>Mirador Viewer</title>
+    <style type="text/css">
+     #viewer {
+       width: 100%;
+       height: 100%;
+       position: fixed;
+     }
+    </style>
+  </head>
+  <body>
+    <div id="viewer"></div>
+
+    <script src="mirador/mirador.js"></script>
+    <script src="annotot_endpoint.js?version=1"></script>
+    <script type="text/javascript">
+
+     $(function() {
+       myMiradorInstance = Mirador({
+         id: "viewer",
+         layout: "1x1",
+         buildPath: "mirador/",
+         data: [
+         { manifestUri: 'https://digi.vatlib.it/iiif/MSS_Barb.gr.221/manifest.json', location: 'Barb.gr.221'},
+{ manifestUri: 'https://digi.vatlib.it/iiif/MSS_Barb.gr.252/manifest.json', location: 'Barb.gr.252'},
+{ manifestUri: 'https://digi.vatlib.it/iiif/MSS_Vat.lat.10696/manifest.json', location: 'Vat.lat.10696'}
+],
+"windowObjects": [],
+    annotationEndpoint: {
+      name: 'Annotot',
+      module: 'AnnototEndpoint',
+      options: {
+        endpoint: 'https://spotlight.vatlib.it/annotations'
+      }
+    },
+      'annotationBodyEditor': {
+        'module': 'TinyMCEAnnotationBodyEditor',
+        'options': {
+          config: {
+            plugins: "image link media directionality",
+            toolbar: "bold italic | bullist numlist | link image media | removeformat | ltr rtl",
+            tags: ["Abbreviazioni", "E. Ponzi (a cura di)"]
+          }
+	  }
+    },
+	"windowSettings": {
+	           "canvasControls": { // The types of controls available to be displayed on a canvas
+	             "imageManipulation" : {
+	               "manipulationLayer" : true,
+	               "controls" : {
+	                 "mirror" : true
+	               }
+	             }
+	           }
+	         },
+     "sidePanelOptions" : {
+       "tocTabAvailable": true,
+       "layersTabAvailable": true,
+       "searchTabAvailable": true
+     }
+  });
+});
+</script>
+  </body>
+</html>
